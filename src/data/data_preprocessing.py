@@ -96,7 +96,7 @@ def main():
         train_processed_data = normalize_text(train_data)
         test_processed_data = normalize_text(test_data)
         
-        data_path = Path('./data')/'processed'
+        data_path = Path('./data')/'interim'
         os.makedirs(data_path, exist_ok=True)
         
         train_processed_data.to_csv((Path(data_path)/'train_processed.csv'), index=False)

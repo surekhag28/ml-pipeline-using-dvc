@@ -7,6 +7,7 @@ mlflow
 dvc
 ipykernel
 xgboost
+scipy>=1.9.0
 
 
 # dev requirements -
