@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = /Users/surekhagaikwad/Documents/dvc_repo/ml-pipeline-data
