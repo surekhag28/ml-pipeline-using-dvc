@@ -53,7 +53,7 @@ def load_data(file_path: str) -> pd.DataFrame:
     
 def apply_transformation(train_data: pd.DataFrame, test_data: pd.DataFrame, max_features: int) -> tuple:
     try:
-        vectorizer = CountVectorizer(max_features=max_features)
+        vectorizer = TfidfVectorizer(max_features=max_features)
         X_train = train_data['content'].values
         y_train = train_data['sentiment'].values
         X_test = test_data['content'].values
@@ -94,8 +94,8 @@ def main():
         test_data = load_data('./data/interim/test_processed.csv')
         
         train_df, test_df = apply_transformation(train_data, test_data, max_features)
-        save_data(train_df, Path('./data/processed'), 'train_bow.csv')
-        save_data(test_df, Path('./data/processed'), 'test_bow.csv')
+        save_data(train_df, Path('./data/processed'), 'train_tfidf.csv')
+        save_data(test_df, Path('./data/processed'), 'test_tfidf.csv')
     except Exception as e:
         logger.error('Failed to complete the feature engineering process: %s', e)
         print(f'Error: {e}')
