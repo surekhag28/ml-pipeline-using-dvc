@@ -18,7 +18,7 @@ logging.basicConfig(
         '%(funcName)s - %(message)s'
     ),
     handlers=[
-        logging.FileHandler("data_ingestion.log", mode='w'),
+        logging.FileHandler("data_preprocessing.log", mode='w'),
         logging.StreamHandler()
     ]
 )
